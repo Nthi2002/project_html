@@ -1,0 +1,134 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.frame {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    background: #3faf82;
+    margin-left: -200px;
+    margin-top: -200px;
+    overflow: hidden;
+    border-radius: 2px;
+    box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, .3);
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}
+
+.center {
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+
+#menu {
+    width: 80px; height: 60px;
+    display: flex;
+    flex-direction: column;
+    cursor : pointer;
+    justify-content: center;
+    align-items: center;
+}
+
+.bar {
+    width: 100%;
+    height: 10px;
+    background: #fff;
+    position: absolute;
+    border-radius: 4px;
+}
+
+.bar:nth-child(1) {
+    animation: menu-close 1s forwards;
+}
+
+.bar:nth-child(2) {
+    animation: menu-close2 1s forwards;
+}
+
+.bar:nth-child(3) {
+    animation: menu-close3 1s forwards;
+}
+
+.open .bar:nth-child(1) {
+    animation: menu-open 1s forwards;
+}
+
+.open .bar:nth-child(2) {
+    animation: menu-open2 1s forwards;
+}
+
+.open .bar:nth-child(3) {
+    animation: menu-open3 1s forwards;
+}
+
+@keyframes menu-open {
+    0% {
+        transform : translateY(-25px);
+    }
+    50% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: rotate(45deg);
+    }
+}
+
+@keyframes menu-open2 {
+    0% {
+        transform: scale(100%);
+    } 
+    100% {
+        transform: scale(0%);
+    }
+}
+
+@keyframes menu-open3 {
+    0% {
+        transform: translateY(25px);
+    }
+    50% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: rotate(135deg);
+    }
+}
+
+@keyframes menu-close {
+  0% {
+    transform: rotate(45deg);
+  }
+  50% {
+    transform: translate(0);
+  }
+  100% {
+    transform: translateY(-25px);
+  }
+}
+
+@keyframes menu-close2 {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(100%);
+    }
+}
+
+@keyframes menu-close3 {
+    0% {
+        transform: rotate(135deg);
+    }
+    50% {
+        transform: translate(0);
+    }
+    100% {
+        transform: translateY(25px);
+    }
+}

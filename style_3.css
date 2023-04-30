@@ -1,0 +1,139 @@
+/* 
+background: #3faf82;
+-moz-osx-font-smoothing: grayscale;
+-webkit-font-smoothing: antialiased; */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.frame {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background:  #3faf82;
+  top: 50%; left: 50%;
+  margin-left: -200px;
+  margin-top: -200px;
+  border-radius: 3px;
+  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, .2);
+  overflow: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+
+#menu {
+    width: 80px;
+    height: 60px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.bar {
+    height: 10px;
+    width: 100%;
+    background: #fff;
+    border-radius: 4px;
+    position: absolute;
+}
+
+.bar:nth-child(1) {
+    animation: menu-close 1s forwards;
+}
+.bar:nth-child(2) {
+    animation: menu-close2 1s forwards;
+}
+
+.bar:nth-child(3) {
+    animation: menu-close3 1s forwards;
+}
+
+.open .bar:nth-child(1) {
+    animation: menu-open 1s forwards;
+}
+
+.open .bar:nth-child(2) {
+    animation: menu-open2 1s forwards;
+}
+
+.open .bar:nth-child(3) {
+    animation: menu-open3 1s forwards;
+}
+
+@keyframes menu-open {
+    0% {
+        transform: translateY(-25px);
+    }
+    50% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: rotate(45deg);
+    }
+}
+
+@keyframes menu-open3 {
+    0% {
+        transform: translateY(25px);
+    }
+    50% {
+        transform: translate(0);
+    }
+    100% {
+        transform: rotate(135deg);
+    } 
+}
+
+@keyframes menu-open2 {
+    0% {
+        transform: scale(100%);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+
+@keyframes menu-close {
+   0% {
+    transform: rotate(45deg);
+   }
+   50% {
+    transform: translateY(0);
+   }
+   100% {
+    transform: translateY(-25px);
+   }
+}
+
+@keyframes menu-close3 {
+    0% {
+        transform: rotate(135deg);
+    }
+    50% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(25px);
+    }
+}
+
+@keyframes menu-close2 {
+   0% {
+    transform: scale(0);
+   }
+   100% {
+    transform: scale(100%);
+   }
+}
